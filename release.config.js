@@ -10,6 +10,10 @@ module.exports = {
         {
           npmPublish: false
         }
-      ]
+      ],
+      ["@semantic-release/git", {
+        "assets": ["main.js"],
+        "message": "chore(release)"
+      }],
     ]
 }
