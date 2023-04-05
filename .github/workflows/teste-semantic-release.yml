@@ -18,6 +18,17 @@ jobs:
         with:
           node-version: '18.x'
       
+      - name: Release
+        uses: docker://semanticrelease/semantic-release:16
+        with:
+          args: |
+            --branches main
+            --debug
+            --plugin @semantic-release/git
+            --plugin @semantic-release/github
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Install dependencies
         run: npm ci
 
