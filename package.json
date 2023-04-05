@@ -1,6 +1,6 @@
 {
   "name": "testes-ci",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Usado para realizar testes de ci",
   "main": "main.js",
   "scripts": {
