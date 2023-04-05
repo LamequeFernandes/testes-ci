@@ -26,8 +26,8 @@ jobs:
             --debug
             --plugin @semantic-release/git
             --plugin @semantic-release/github
-          env:
-            GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Install dependencies
         run: npm ci
