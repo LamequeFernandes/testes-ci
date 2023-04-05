@@ -32,11 +32,10 @@ jobs:
         env:
           GH_TOKEN : ${{ secrets.GH_TOKEN }}
 
-      - name: Read package version
-        run: PACKAGE_VERSION=$(cat package.json | jq -r '.version')
-
-      - name: Use package version
-        run: echo "Package version is $PACKAGE_VERSION"
+      - name: Set version env var
+        run: |
+          echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+          echo $VERSION
 
 
       # - name: Login to Docker Hub
