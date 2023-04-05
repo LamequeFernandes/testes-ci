@@ -51,4 +51,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: lamequesao/imagem-teste:${VERSION}
+          tags: "lamequesao/imagem-teste:${VERSION}"
+
