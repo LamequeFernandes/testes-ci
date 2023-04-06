@@ -1,1 +1,1 @@
-console.log('Primeiro teste com semantic release bug')
+console.log('Primeiro teste com semantic release')
