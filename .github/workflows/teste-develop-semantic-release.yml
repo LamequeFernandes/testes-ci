@@ -19,10 +19,16 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: set env
+        run: |
+          echo "NOW=$(date +'%Y.%m.%dT%H.%M.%S')" >> $GITHUB_ENV
+          echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: "lamequesao/imagem-teste:latest"
-
+          tags: |
+            lamequesao/imagem-teste:latest-${{ env.VERSION }}-${{ env.NOW }}
+            lamequesao/imagem-teste:latest
