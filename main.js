@@ -1,1 +1,1 @@
-console.log('Primeiro teste com semantic release na develop 2')
+console.log('Primeiro teste com semantic release na develop 3')
